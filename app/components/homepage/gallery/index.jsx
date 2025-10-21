@@ -160,7 +160,7 @@ export default function Gallery() {
 								{/* Close button */}
 								<button
 									onClick={close}
-									className="fixed top-6 right-6 z-20 bg-white/90 hover:bg-white text-black p-3 w-12 h-12 font-bold text-xl"
+									className="fixed top-6 right-6 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3 w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
 									aria-label="Cerrar"
 								>
@@ -169,7 +169,7 @@ export default function Gallery() {
 								{/* Prev button */}
 								<button
 									onClick={(e) => { e.stopPropagation(); prev() }}
-									className="fixed left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black p-3  w-12 h-12 font-bold text-xl"
+									className="fixed left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3  w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
 									aria-label="Anterior"
 								>
@@ -178,7 +178,7 @@ export default function Gallery() {
 								{/* Next button */}
 								<button
 									onClick={(e) => { e.stopPropagation(); next() }}
-									className="fixed right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black p-3  w-12 h-12 font-bold text-xl"
+									className="fixed right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3  w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
 									aria-label="Siguiente"
 								>

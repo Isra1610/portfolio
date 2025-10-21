@@ -176,6 +176,11 @@ function HeroSection() {
               </div>
               <div>
                 <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
+                <span className="mr-2 text-white">quickLearner</span>
+                <span className="text-amber-300">&amp;&amp;</span>
+              </div>
+              <div>
+                <span className="ml-12 lg:ml-24 text-cyan-400">this.</span>
                 <span className="mr-2 text-white">problemSolver</span>
                 <span className="text-amber-300">&amp;&amp;</span>
               </div>
