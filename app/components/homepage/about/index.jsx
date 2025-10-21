@@ -15,7 +15,7 @@ function AboutSection() {
       <div className="flex flex-col items-center justify-center max-w-3xl mx-auto">
         <div className="text-center">
           <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
-            Who I am?
+            Who am I?
           </p>
           <p className="text-gray-200 text-sm lg:text-lg">
             {personalData.description}

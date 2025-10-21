@@ -11,7 +11,7 @@ export const projectsData = [
     {
         id: 2,
         name: 'Telegram Web App Mini Game',
-        description: 'I have designed and developed the frontend web app for a Telegram mini game. I created the UI using NextJS, Typescript, TailwindCSS, zustand and Shadcn UI. The app supports multiple languages and currencies. The main deal is to build a optimized code because of the battery consumption of the app and the performance of the app.',
+        description: "I have developed the frontend for a Telegram Web App mini game. The UI uses NextJS, TypeScript, Tailwind CSS, Zustand and Shadcn UI, with support for multiple languages and currencies. Because it runs inside Telegram’s in‑app WebView, we optimized for low battery usage and smooth performance—smaller bundles, fewer re‑renders, and lightweight animations. We also worked within WebView constraints (limited storage, no background tasks, variable network conditions) and integrated the Telegram WebApp API for context and initialization.",
         tools: ['NextJS', 'Tailwind CSS', "Shadcn UI", "TypeScript"],
         role: 'Frontend Developer',
         code: '',
