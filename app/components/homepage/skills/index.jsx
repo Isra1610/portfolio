@@ -1,11 +1,15 @@
+"use client";
 // @flow strict
 
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
+import { useLanguage } from "../../i18n/language-provider";
 
 function Skills() {
+  const { t } = useLanguage();
+
   return (
     <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
       <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
@@ -20,7 +24,7 @@ function Skills() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
+            {t.skills.title}
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>

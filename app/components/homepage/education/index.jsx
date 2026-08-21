@@ -6,8 +6,11 @@ import { BsPersonWorkspace } from "react-icons/bs";
 import lottieFile from '../../../assets/lottie/study.json';
 import AnimationLottie from "../../helper/animation-lottie";
 import GlowCard from "../../helper/glow-card";
+import { useLanguage } from "../../i18n/language-provider";
 
 function Education() {
+  const { t } = useLanguage();
+
   return (
     <div id="education" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
       <Image
@@ -27,7 +30,7 @@ function Education() {
         <div className="flex  items-center">
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
           <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
+            {t.education.title}
           </span>
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
@@ -56,7 +59,7 @@ function Education() {
                       />
                       <div className="flex justify-center">
                         <p className="text-xs sm:text-sm text-[#16f2b3]">
-                          {education.duration}
+                          {t.educations[education.id]?.duration}
                         </p>
                       </div>
                       <div className="flex items-center gap-x-8 px-3 py-5">
@@ -65,9 +68,9 @@ function Education() {
                         </div>
                         <div>
                           <p className="text-base sm:text-xl mb-2 font-medium uppercase">
-                            {education.title}
+                            {t.educations[education.id]?.title}
                           </p>
-                          <p className="text-sm sm:text-base">{education.institution}</p>
+                          <p className="text-sm sm:text-base">{t.educations[education.id]?.institution}</p>
                         </div>
                       </div>
                     </div>

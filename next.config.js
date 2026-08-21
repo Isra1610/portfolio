@@ -23,4 +23,18 @@ module.exports = {
       },
     ],
   },
+  // Force the CV to download instead of opening in the browser's PDF viewer.
+  async headers() {
+    return [
+      {
+        source: '/Israel_Rojas_Desarrollador_Web.pdf',
+        headers: [
+          {
+            key: 'Content-Disposition',
+            value: 'attachment; filename="Israel_Rojas_Desarrollador_Web.pdf"',
+          },
+        ],
+      },
+    ]
+  },
 }

@@ -3,14 +3,20 @@
 import { useEffect, useRef, useState } from "react"
 import { galleryPacks } from "@/utils/data/gallery"
 import Image from "next/image"
+import { useLanguage } from "../../i18n/language-provider"
 
 /**
  * Gallery
  * props:
- * - packages: Array<{ title: string, images: Array<{ url: string, caption?: string }> }>
+ * - packages: Array<{ id: string, images: Array<{ id: string, url: string }> }>
+ * Titles and captions are resolved from the active locale dictionary.
  */
 export default function Gallery() {
+	const { t } = useLanguage()
 	const [hovered, setHovered] = useState(null)
+
+	const packTitle = (pack) => t.galleryPacks[pack.id]?.title || pack.id
+	const imageCaption = (pack, image) => t.galleryPacks[pack.id]?.images?.[image.id] || ""
 	const [isOpen, setIsOpen] = useState(false)
 	const [activePackage, setActivePackage] = useState(null)
 	const [activeIndex, setActiveIndex] = useState(0)
@@ -65,7 +71,7 @@ export default function Gallery() {
 						<div className="flex  items-center">
 							<span className="w-24 h-[2px] bg-[#1a1443]"></span>
 							<span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-								Gallery
+								{t.gallery.title}
 							</span>
 							<span className="w-24 h-[2px] bg-[#1a1443]"></span>
 						</div>
@@ -115,7 +121,7 @@ export default function Gallery() {
 										<Image
 											key={i}
 											src={img.url}
-											alt={img.caption || `${pkg.title} ${i + 1}`}
+											alt={imageCaption(pkg, img) || `${packTitle(pkg)} ${i + 1}`}
 											width={800}
 											height={450}
 											style={{ ...baseStyle, transform, opacity }}
@@ -126,7 +132,7 @@ export default function Gallery() {
 								})}
 							</div>
 							<div className="mt-3 flex items-center justify-center">
-								<h3 className="text-base font-semibold text-white drop-shadow">{pkg.title}</h3>
+								<h3 className="text-base font-semibold text-white drop-shadow">{packTitle(pkg)}</h3>
 							</div>
 						</div>
 					))}
@@ -149,7 +155,7 @@ export default function Gallery() {
 											<div className="fixed inset-0 flex items-center justify-center z-10 pointer-events-none">
 												<Image
 													src={activePackage.images[activeIndex].url}
-													alt={activePackage.images[activeIndex].caption || activePackage.title}
+													alt={imageCaption(activePackage, activePackage.images[activeIndex]) || packTitle(activePackage)}
 													width={1600}
 													height={900}
 													className="max-w-[90vw] max-h-[85vh] object-contain rounded-xl shadow-2xl select-none"
@@ -162,7 +168,7 @@ export default function Gallery() {
 									onClick={close}
 									className="fixed top-6 right-6 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3 w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
-									aria-label="Cerrar"
+									aria-label={t.gallery.close}
 								>
 									✕
 								</button>
@@ -171,7 +177,7 @@ export default function Gallery() {
 									onClick={(e) => { e.stopPropagation(); prev() }}
 									className="fixed left-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3  w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
-									aria-label="Anterior"
+									aria-label={t.gallery.previous}
 								>
 									‹
 								</button>
@@ -180,13 +186,13 @@ export default function Gallery() {
 									onClick={(e) => { e.stopPropagation(); next() }}
 									className="fixed right-6 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-black pt-[10px] pb-3 px-3  w-12 h-12 font-bold text-xl"
 									style={{ borderRadius: '50%', boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}
-									aria-label="Siguiente"
+									aria-label={t.gallery.next}
 								>
 									›
 								</button>
 								{/* Caption and index */}
 								<div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-20 text-center px-4">
-									<div className="text-xl text-white drop-shadow mb-1">{activePackage.images[activeIndex].caption}</div>
+									<div className="text-xl text-white drop-shadow mb-1">{imageCaption(activePackage, activePackage.images[activeIndex])}</div>
 									<div className="text-lg text-gray-200">&lt;{activeIndex + 1}/{activePackage.images.length}&gt;</div>
 								</div>
 							</div>

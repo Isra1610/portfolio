@@ -1,25 +1,25 @@
+// Titles and captions live in utils/i18n/locales/*.js, keyed by these ids.
 export const galleryPacks = [
-					{
-						title: "Gaming Web",
-						images: [
-							{ url: "/packs/gaming-web/gameplay.png", caption: "Gameplay screen" },
-							{ url: "/packs/gaming-web/home.png", caption: "Home screen" },
-							{ url: "/packs/gaming-web/news.png", caption: "News section" },
-							{ url: "/packs/gaming-web/spines.png", caption: "Spines / UI" },
-							{ url: "/packs/gaming-web/tournaments.png", caption: "Tournaments view" },
-						],
-					},
-
-					{
-						title: "Telegram App",
-						images: [
-							{ url: "/packs/telegram/gaming.png", caption: "Gaming chat" },
-							{ url: "/packs/telegram/missions.png", caption: "Missions screen" },
-							{ url: "/packs/telegram/pve.png", caption: "PVE section" },
-							{ url: "/packs/telegram/referals.png", caption: "Referrals view" },
-							{ url: "/packs/telegram/settings.png", caption: "Settings" },
-							{ url: "/packs/telegram/store.png", caption: "In-app store" },
-							{ url: "/packs/telegram/taptap.png", caption: "TapTap integration" },
-						],
-					},
-				]
+  {
+    id: "gaming-web",
+    images: [
+      { id: "gameplay", url: "/packs/gaming-web/gameplay.png" },
+      { id: "home", url: "/packs/gaming-web/home.png" },
+      { id: "news", url: "/packs/gaming-web/news.png" },
+      { id: "spines", url: "/packs/gaming-web/spines.png" },
+      { id: "tournaments", url: "/packs/gaming-web/tournaments.png" },
+    ],
+  },
+  {
+    id: "telegram",
+    images: [
+      { id: "gaming", url: "/packs/telegram/gaming.png" },
+      { id: "missions", url: "/packs/telegram/missions.png" },
+      { id: "pve", url: "/packs/telegram/pve.png" },
+      { id: "referals", url: "/packs/telegram/referals.png" },
+      { id: "settings", url: "/packs/telegram/settings.png" },
+      { id: "store", url: "/packs/telegram/store.png" },
+      { id: "taptap", url: "/packs/telegram/taptap.png" },
+    ],
+  },
+];
