@@ -1,6 +1,10 @@
 const path = require('path')
  
 module.exports = {
+  // Pin the tracing root to this project: an unrelated lockfile in the parent
+  // directory makes Next infer the wrong workspace root.
+  outputFileTracingRoot: __dirname,
+
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
