@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { useLanguage } from "./components/i18n/language-provider";
 
-function page() {
+function NotFound() {
   const { t } = useLanguage();
 
   return (
@@ -22,4 +22,4 @@ function page() {
   );
 };
 
-export default page;
+export default NotFound;
