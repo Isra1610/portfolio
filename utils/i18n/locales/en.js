@@ -62,7 +62,7 @@ export const en = {
     invalidEmail: 'Please provide a valid email!',
     requiredFields: 'All fields are required!',
     resumeHint:
-      "PS: after my CV? It lives behind this form. Send me a message and it unlocks — think of it as a 401 with the friendliest fix in the world.",
+      "Here for my CV? It lives behind this form. Send me a message and it unlocks — think of it as a 401 with the friendliest fix in the world.",
     resumeUnlocked: 'Thanks for writing. Your copy is ready:',
     downloadResume: 'Download CV',
     restoreNote: 'Enjoy the read. Bringing the form back, in case you want to add something:',
